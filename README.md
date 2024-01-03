@@ -75,3 +75,63 @@ pip install scapy
 
 - [cryptography library documentation](https://cryptography.io/en/latest/)
 - [Scapy Documentation](https://scapy.readthedocs.io/en/latest/)
+
+
+Certainly! Below is the documentation for the provided Python code:
+
+---
+
+### Elliptic Curve Arithmetic
+
+This Python script demonstrates basic elliptic curve arithmetic, specifically the double-and-add operation for scalar multiplication on an elliptic curve defined over a finite field.
+
+#### Parameters:
+- `a`: Coefficient in the elliptic curve equation \(y^2 \equiv x^3 + ax + b \pmod{p}\).
+- `p`: Prime modulus specifying the finite field \(\mathbb{F}_p\) over which the elliptic curve is defined.
+- `G`: Generator point on the elliptic curve, represented as a tuple `(x, y)`.
+  
+#### Functions:
+
+1. **point_double(P, a, p)**
+   - Computes the doubling of a point `P` on the elliptic curve.
+   - Parameters:
+     - `P`: Point on the elliptic curve (tuple representing coordinates).
+     - `a`: Coefficient in the elliptic curve equation.
+     - `p`: Prime modulus.
+   - Returns: Doubled point.
+
+2. **point_add(P, Q, a, p)**
+   - Computes the addition of two points `P` and `Q` on the elliptic curve.
+   - Parameters:
+     - `P`: First point on the elliptic curve.
+     - `Q`: Second point on the elliptic curve.
+     - `a`: Coefficient in the elliptic curve equation.
+     - `p`: Prime modulus.
+   - Returns: Resultant point after addition.
+
+3. **doubleAndAdd(t, P, a, p)**
+   - Performs the double-and-add operation for scalar multiplication on the elliptic curve.
+   - Parameters:
+     - `t`: Scalar multiplier.
+     - `P`: Generator point on the elliptic curve.
+     - `a`: Coefficient in the elliptic curve equation.
+     - `p`: Prime modulus.
+   - Returns: Resultant point after scalar multiplication.
+
+#### Example Usage:
+
+```python
+# Example Elliptic Curve Parameters
+a = 2
+p = 17
+G = (5, 11)  # Generator point
+
+# Scalar Multiplication Example
+t = 26
+result = doubleAndAdd(t, G, a, p)
+print("Result:", result)
+```
+
+In this example, the elliptic curve equation is \(y^2 \equiv x^3 + 2x + 2 \pmod{17}\), and the generator point is \(G = (5, 11)\). The script performs scalar multiplication of the generator point by a scalar \(t = 26\), yielding the result on the elliptic curve.
+
+---
