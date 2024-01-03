@@ -48,7 +48,7 @@ pip install scapy
    ```
 3. Run the manInTheMiddle code:
    ```bash
-   python3 manInTheMiddle
+   python3 manInTheMiddle.py
    ```
 
 ## Explanation
